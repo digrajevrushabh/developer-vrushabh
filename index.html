@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Prajakta! 💖 | For Beautiful Girl</title>
+  <meta name="description" content="A special birthday celebration website created with admiration for Prajakta">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-rose">
+  <!-- Particle Canvas for Confetti, Stars & Floating Sparkles -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ==================== UNBOXING / SURPRISE GATE OVERLAY ==================== -->
+  <div id="surprise-gate" class="gate-overlay">
+    <div class="gate-sparkles"></div>
+    <div class="gate-card">
+      <div class="crown-icon">🎁</div>
+      <div class="gate-tag">VIP SURPRISE GIFT • BEAUTIFUL GIRL</div>
+      <h1 class="gate-title">A Surprise Gift for <span>Prajakta</span></h1>
+      <p class="gate-subtitle">Hey beautiful... A birthday surprise gift is waiting for you 🥂</p>
+      
+      <div class="gift-box-wrapper" id="gift-box-btn" role="button" tabindex="0" title="Click to Unwrap Beautiful Girl's Surprise Gift">
+        <div class="gift-glow"></div>
+        <div class="gift-box">
+          <div class="gift-lid">
+            <div class="gift-bow"></div>
+          </div>
+          <div class="gift-body">
+            <div class="gift-ribbon-v"></div>
+            <div class="gift-ribbon-h"></div>
+          </div>
+        </div>
+        <div class="tap-hint">
+          <span class="finger-tap">💖</span>
+          <span>Tap to Unwrap Beautiful Girl's Birthday Surprise Gift!</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MAIN CONTENT WRAPPER ==================== -->
+  <div id="main-content" class="content-hidden">
+
+    <!-- MINIMAL FLOATING QUICK CONTROLS (NAVBAR REMOVED) -->
+    <div class="floating-quick-controls">
+      <button id="music-toggle-btn" class="quick-pill-btn" title="Toggle Music">
+        <span id="music-icon">🎵</span>
+        <span class="btn-text">Music</span>
+      </button>
+      <button id="sfx-toggle-btn" class="quick-circle-btn" title="Toggle Sound Effects">
+        <span id="sfx-icon">🔊</span>
+      </button>
+      <button id="theme-toggle-btn" class="quick-circle-btn" title="Switch Theme">
+        <span id="theme-icon">🌙</span>
+      </button>
+    </div>
+
+    <!-- AUDIO CONTROLLER & PLAYLIST DRAWER -->
+    <div class="audio-panel-drawer" id="audio-drawer">
+      <div class="audio-panel-content">
+        <div class="audio-info">
+          <div class="audio-disc rotating">💿</div>
+          <div>
+            <div class="song-title" id="current-track-name">Just The Way You Are 🎵</div>
+            <div class="song-artist" id="current-track-artist">Bruno Mars • For Prajakta</div>
+          </div>
+        </div>
+        <div class="audio-playlist">
+          <button class="track-btn active" data-track="just_the_way">
+            <span>🎶</span> Just The Way You Are
+          </button>
+          <button class="track-btn" data-track="roses">
+            <span>🌹</span> Romantic Roses (Hi Nanna)
+          </button>
+          <button class="track-btn" data-track="chimes">
+            <span>💖</span> Late-Night Music Box Chimes
+          </button>
+          <label class="custom-file-upload track-btn" title="Choose any MP3 file from your computer">
+            <input type="file" id="custom-audio-input" accept="audio/*">
+            <span>📁</span> Custom Song (.mp3)
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="hero-section">
+      <div class="hero-container">
+        <!-- Featured Avatar Showcase -->
+        <div class="hero-avatar-wrapper animate-bounce">
+          <img src="images/praju2.jpg" alt="Beautiful Girl Prajakta" class="hero-avatar-img">
+          <div class="avatar-crown">👑</div>
+        </div>
+
+        <div class="hero-salutation">Hey Beautiful... 💖</div>
+
+        <div class="hero-badge">
+          <span>🎁 A MIDNIGHT SURPRISE GIFT FOR BEAUTIFUL GIRL 🎁</span>
+        </div>
+
+        <h1 class="hero-title">
+          Happy Birthday, <br>
+          <span class="gradient-text hero-name">Prajakta!</span>
+        </h1>
+
+        <div class="hero-nickname-pills">
+          <span class="pill highlight">👑 Beautiful Girl</span>
+          <span class="pill">🍸 Effortlessly Stunning</span>
+          <span class="pill">💖 Forever Gorgeous</span>
+        </div>
+
+        <p class="hero-description">
+          Sleek, confident, and dangerously captivating. Consider this entire celebration my personal surprise gift to the girl who effortlessly commands every room — and completely owns my attention.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#cake-section" class="btn btn-primary glow-btn">
+            🎂 Pop Champagne & Cut Cake
+          </a>
+          <a href="#letter-section" class="btn btn-secondary">
+            🎁 Open Surprise Gift Note
+          </a>
+          <button id="hero-confetti-btn" class="btn btn-tertiary">
+            💖 Love Confetti
+          </button>
+        </div>
+
+        <!-- Floating Quick Stat Badges -->
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Pure Charm & Grace</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Times Her Smile Made Days Better</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">#1</div>
+            <div class="stat-label">In Our Hearts (Beautiful Girl)</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-scroll-hint">
+        <span>Scroll down for the celebration</span>
+        <div class="scroll-arrow">↓</div>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION: VIRTUAL BIRTHDAY CAKE ==================== -->
+    <section id="cake-section" class="cake-section">
+      <div class="section-header">
+        <span class="sub-heading">Time for a ritual</span>
+        <h2 class="section-title">Blow the Candles & Cut the Cake! 🎂</h2>
+        <p class="section-desc">Close your eyes, make a sweet wish, Praju, and blow out the candles!</p>
+      </div>
+
+      <div class="cake-stage">
+        <!-- Interactive Cake Structure -->
+        <div class="cake-container" id="cake-container">
+          <!-- Plate -->
+          <div class="cake-plate"></div>
+
+          <!-- Tier 3 (Bottom) -->
+          <div class="cake-tier tier-bottom">
+            <div class="cake-icing"></div>
+            <div class="cake-decorations">
+              <span>🍓</span><span>💖</span><span>🍓</span><span>💖</span><span>🍓</span>
+            </div>
+          </div>
+
+          <!-- Tier 2 (Middle) -->
+          <div class="cake-tier tier-middle">
+            <div class="cake-icing"></div>
+            <div class="cake-text">PRAJAKTA</div>
+          </div>
+
+          <!-- Tier 1 (Top) -->
+          <div class="cake-tier tier-top">
+            <div class="cake-icing top-drips"></div>
+            
+            <!-- Candles Container -->
+            <div class="candles-wrapper">
+              <div class="candle c1" data-candle="1">
+                <div class="flame" id="flame-1"></div>
+                <div class="smoke" id="smoke-1"></div>
+                <div class="candle-stick"></div>
+              </div>
+              <div class="candle c2" data-candle="2">
+                <div class="flame" id="flame-2"></div>
+                <div class="smoke" id="smoke-2"></div>
+                <div class="candle-stick"></div>
+              </div>
+              <div class="candle c3" data-candle="3">
+                <div class="flame" id="flame-3"></div>
+                <div class="smoke" id="smoke-3"></div>
+                <div class="candle-stick"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cake Slice Animation Element -->
+          <div class="cake-slice-cut" id="cake-slice-cut">
+            <span class="slice-emoji">🍰</span>
+          </div>
+        </div>
+
+        <!-- Cake Controls & Feedback Status -->
+        <div class="cake-controls">
+          <div id="cake-status-msg" class="cake-status-msg">
+            💖 Click on the candles or press "Blow Out Candles" to make your wish!
+          </div>
+
+          <div class="cake-btn-row">
+            <button id="blow-candles-btn" class="btn btn-primary">
+              💨 Blow Out Candles
+            </button>
+            <button id="cut-cake-btn" class="btn btn-secondary" disabled>
+              🔪 Cut the Cake!
+            </button>
+            <button id="relight-btn" class="btn btn-outline">
+              🔥 Relight Candles
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION: POLAROID MEMORY WALL ==================== -->
+    <section id="memories" class="memories-section">
+      <div class="section-header">
+        <span class="sub-heading">SURPRISE PHOTO VAULT 🎁</span>
+        <h2 class="section-title">The Many Faces of Beautiful Girl 📸</h2>
+        <p class="section-desc">A surprise visual gift celebrating Prajakta's unmatched elegance, style, and beauty.</p>
+        <div class="upload-guide-pill">
+          <span>💖 Click on any portrait to view fullscreen in high resolution</span>
+        </div>
+      </div>
+
+      <div class="polaroid-grid" id="polaroid-container">
+        <!-- Polaroid 1: Navy Saree & Sunglasses -->
+        <div class="polaroid-frame" data-tilt="-3">
+          <div class="tape tape-top"></div>
+          <div class="polaroid-img-wrapper" id="img-wrapper-1">
+            <img src="images/praju2.jpg" alt="Beautiful Girl in Navy Saree & Shades" class="uploaded-img" id="img-display-1">
+          </div>
+          <div class="polaroid-caption">
+            <span class="caption-text">Chic & captivating 🕶️💖</span>
+            <label class="btn-change-photo" title="Change Photo">
+              📷
+              <input type="file" class="photo-input" data-target="1" accept="image/*">
+            </label>
+          </div>
+        </div>
+
+        <!-- Polaroid 2: Regal Wine Gown -->
+        <div class="polaroid-frame" data-tilt="2">
+          <div class="tape tape-right"></div>
+          <div class="polaroid-img-wrapper" id="img-wrapper-2">
+            <img src="images/praju4.jpg" alt="Prajakta in Wine Red Gown" class="uploaded-img" id="img-display-2">
+          </div>
+          <div class="polaroid-caption">
+            <span class="caption-text">Pure royalty in wine red 🍷👑</span>
+            <label class="btn-change-photo" title="Change Photo">
+              📷
+              <input type="file" class="photo-input" data-target="2" accept="image/*">
+            </label>
+          </div>
+        </div>
+
+        <!-- Polaroid 3: Traditional Silk Saree & Nath -->
+        <div class="polaroid-frame" data-tilt="-2">
+          <div class="tape tape-left"></div>
+          <div class="polaroid-img-wrapper" id="img-wrapper-3">
+            <img src="images/praju1.jpg" alt="Prajakta in Silk Saree" class="uploaded-img" id="img-display-3">
+          </div>
+          <div class="polaroid-caption">
+            <span class="caption-text">Timeless traditional grace 🌸</span>
+            <label class="btn-change-photo" title="Change Photo">
+              📷
+              <input type="file" class="photo-input" data-target="3" accept="image/*">
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-actions">
+        <label class="btn btn-primary file-upload-btn">
+          ➕ Upload Another Surprise Photo
+          <input type="file" id="batch-photo-upload" accept="image/*" multiple>
+        </label>
+      </div>
+    </section>
+
+    <!-- ==================== SECTION: SECRET LETTER ==================== -->
+    <section id="letter-section" class="letter-section">
+      <div class="section-header">
+        <span class="sub-heading">Straight from the heart</span>
+        <h2 class="section-title">A Secret Note for Beautiful Girl 💌</h2>
+        <p class="section-desc">Tap the wax seal to open this personal letter written exclusively for you, Praju.</p>
+      </div>
+
+      <div class="envelope-container">
+        <!-- Interactive Envelope -->
+        <div class="envelope" id="secret-envelope">
+          <div class="envelope-back"></div>
+          
+          <!-- The Letter Inside -->
+          <div class="letter-paper" id="letter-paper">
+            <div class="letter-header">
+              <span class="letter-date">Midnight Surprise Gift 🎁</span>
+              <span class="letter-to">Hey Beautiful,</span>
+            </div>
+            <div class="letter-content">
+              <p style="font-size: 1.15rem; font-weight: 600; color: #1e1b4b; line-height: 1.5; margin-bottom: 0.6rem;">
+                Hey Beautiful — to the girl who brings so much warmth, grace, and light wherever she goes.
+              </p>
+              <p style="font-size: 1.05rem; line-height: 1.5; margin-bottom: 0.6rem;">
+                Happy Birthday, Praju! You are effortlessly gorgeous, kind-hearted, and having you in my life is truly special.
+              </p>
+              <p style="font-size: 1.05rem; line-height: 1.5;">
+                May this year bring you all the success, endless smiles, and true happiness you deserve, Beautiful Girl! 🌸🎂
+              </p>
+            </div>
+            <div class="letter-footer">
+              <p class="letter-sign">With all my love & warmest wishes,</p>
+              <p class="letter-sender">— Vrushabh 💖</p>
+            </div>
+          </div>
+
+          <div class="envelope-front"></div>
+          <div class="envelope-flap" id="envelope-flap"></div>
+          
+          <!-- Wax Seal Button -->
+          <div class="wax-seal" id="wax-seal-btn" role="button" tabindex="0" title="Click to open letter">
+            <div class="wax-inner">
+              <span class="seal-letter">P</span>
+              <span class="seal-sub">Praju</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== SECTION: SURPRISE TREAT BOX ==================== -->
+    <section id="treats-section" class="treats-section">
+      <div class="section-header">
+        <span class="sub-heading">SURPRISE BIRTHDAY TREAT 🎁</span>
+        <h2 class="section-title">A Special Surprise for Beautiful Girl 💖</h2>
+        <p class="section-desc">Tap the magical glowing gift box below to unwrap a special surprise treat for Praju!</p>
+      </div>
+
+      <div class="treat-box-wrapper">
+        <div class="surprise-treat-card" id="surprise-treat-card" role="button" tabindex="0" title="Tap to Open Surprise!">
+          <div class="treat-card-inner">
+            <div class="treat-icon" id="treat-icon">🎁</div>
+            <h3 class="treat-title" id="treat-title">Tap to Unwrap Your Surprise!</h3>
+            <p class="treat-body" id="treat-body">
+              Something sweet prepared exclusively for Beautiful Girl... 🥂💖
+            </p>
+            <div class="treat-tag" id="treat-tag">💖 TOUCH TO OPEN 💖</div>
+
+            <!-- Only Share Party Location Button Inside Card -->
+            <div class="party-loc-simple-wrap" onclick="event.stopPropagation()">
+              <a id="party-whatsapp-btn" class="btn-party-location-simple" href="https://api.whatsapp.com/send?text=🚨%20VIP%20PARTY%20ALERT!%20Beautiful%20Girl%20(Praju)%20is%20celebrating%20her%20Birthday!%20📍%20Drop%20your%20party%20location%20here%20so%20we%20can%20celebrate!%20🎂🥂" target="_blank" rel="noopener noreferrer">
+                📍 Share Your Party Location 🚀
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="treat-controls">
+          <button id="next-surprise-btn" class="btn btn-primary glow-btn">
+            💖 Open / Next Surprise Treat
+          </button>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="site-footer">
+      <div class="footer-heart-blast">
+        <button id="footer-heart-btn" class="btn-heart-pulse" title="Shower Praju with Love!">
+          💖 Tap for Love Shower
+        </button>
+      </div>
+
+      <p class="footer-copy">
+        Crafted with deep admiration, respect, and best wishes for 
+        <strong>Prajakta</strong>.
+      </p>
+      <p class="footer-sub">
+        Happy Birthday, Gorgeous! May this year be your best chapter yet. 💖
+      </p>
+
+      <div class="share-options">
+        <button id="copy-link-btn" class="btn btn-outline btn-sm">
+          🔗 Copy Celebration Link
+        </button>
+      </div>
+
+      <p class="footer-credit">
+        Developed by Vrushabh Digraje &copy; 2026
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- LIGHTBOX MODAL FOR POLAROIDS -->
+  <div id="image-lightbox" class="lightbox-modal hidden">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+      <button id="lightbox-close" class="lightbox-close">&times;</button>
+      <div id="lightbox-img-container" class="lightbox-img-box">
+        <!-- Rendered dynamically -->
+      </div>
+      <p id="lightbox-caption" class="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="toast-notification"></div>
+
+  <!-- SCRIPTS -->
+  <script src="script.js"></script>
+</body>
+</html>
